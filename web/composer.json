@@ -1,0 +1,14 @@
+{
+    "name": "daniel/blue-bird-engine",
+    "description": "Parcial 3 ED",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Rejon",
+            "email": "dandarkus7@gmail.com"
+        }
+    ],
+    "require": {
+        "nticaric/twitter-streaming-api": "v1.0"
+    }
+}
