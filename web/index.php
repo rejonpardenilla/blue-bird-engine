@@ -19,8 +19,16 @@ include __DIR__ . '/vendor/autoload.php';
   
   if ( isset($_POST["hashtag"]) ) :
 
+    if (isset($_POST["numberOfTweets"])) {
+      $numberOfTweets = $_POST["numberOfTweets"];
+      if ($numberOfTweets < 1 || $numberOfTweets > 1000) {
+        $numberOfTweets = 10;
+      }
+    } else {
+      $numberOfTweets = 10;
+    }
+
     $hashtag = $_POST["hashtag"];
-    $numberOfTweets = 10;
 
     $tweetCount = 0;
 
@@ -72,6 +80,7 @@ include __DIR__ . '/vendor/autoload.php';
     <h1>Analizador de Tweets</h1>
     <form action="" method="post">
       Hashtag: <input type="text" name="hashtag"><br>
+      Number of tweets: <input type="text" name="numberOfTweets"><br>
       <input type="submit">
     </form>
   </div>
