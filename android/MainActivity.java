@@ -1,4 +1,3 @@
-package com.example.rolando.myapplication_buenaversiob;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,9 +24,9 @@ import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     private String array_spinner[];
-    private ListView listRoli;
+    private ListView list_1;
     private ArrayAdapter<String> adapter;
-    private ArrayList<String> arrayVictor;
+    private ArrayList<String> array_1;
     private Button boton;
     private boolean flagloading;
     private boolean endofsearchResult;
@@ -45,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         boton = (Button)findViewById(R.id.Mostrar_button);
         setContentView(R.layout.activity_main);
 
-        listRoli = (ListView) findViewById(R.id.listView);
-        arrayVictor = new ArrayList<String>();
-        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_layout, arrayVictor);
-        listRoli.setAdapter(adapter);
-        arrayVictor.add("jaja");
+        list_1 = (ListView) findViewById(R.id.listView);
+        array_1 = new ArrayList<String>();
+        adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.custom_layout, array_1);
+        list_1.setAdapter(adapter);
+        array_1.add("jaja");
         adapter.notifyDataSetChanged();
 
 
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 final List<Tweet> tweets = result.data.tweets;
                 for (Tweet tweet : tweets) {
 
-                    arrayVictor.add(tweet.text.toLowerCase() +" @"+tweet.user.name);
+                    array_1.add(tweet.text.toLowerCase() +" @"+tweet.user.name);
                     adapter.notifyDataSetChanged();
 
 
